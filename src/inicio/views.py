@@ -6,7 +6,7 @@ from django.http import HttpResponse
 def myHomeView(request,*args,**kwargs):
     print(args,kwargs)
     print(request.user)
-    return HttpResponse('<h1>Hola mundo desde Django</h1>')
+    return render(request,'home.html',{})
 
 def myOtraVista(request, *args, **kwargs):
     return HttpResponse('<h1>Solo otra pagina</h1>')
