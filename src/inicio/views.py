@@ -5,9 +5,11 @@ from django.http import HttpResponse
 
 # Create your views here.
 def myHomeView(request,*args,**kwargs):
-    print(args,kwargs)
-    print(request.user)
-    return render(request,'home.html',{})
+    myContext = {
+        'myText': 'Esto es sobre nosotros',
+        'myNumber': 333
+    }
+    return render(request,'home.html',myContext)
 
 def myOtraVista(request, *args, **kwargs):
     return HttpResponse('<h1>Solo otra pagina</h1>')
