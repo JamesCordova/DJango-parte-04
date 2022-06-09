@@ -17,9 +17,11 @@ from django.contrib import admin
 from django.urls import path
 from inicio.views import myOtraVista
 from inicio.views import myHomeView
+from inicio.views import pagina404
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', myHomeView, name='Pagina de inicio'),
-    path('otraVista', myOtraVista, name='Otra vista')
+    path('otraVista', myOtraVista, name='Otra vista'),
+    path('404', pagina404, name='Pagina no encontrada')
 ]
