@@ -7,7 +7,8 @@ from django.http import HttpResponse
 def myHomeView(request,*args,**kwargs):
     myContext = {
         'myText': 'Esto es sobre nosotros',
-        'myNumber': 333
+        'myNumber': 333,
+        'myList': [33, 44, 55]
     }
     return render(request,'home.html',myContext)
 
