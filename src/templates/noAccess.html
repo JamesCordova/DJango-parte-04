@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Template nuevo para no access</title>
-    </head>
-    <body>
-        {% include 'nav.html' %}
-        <h1>Usted no tiene acceso</h1>
-        {{ request.method }}
-        {{ request.headers.user_agent }}<br>
-        {{ request.get_full_path }}
-    </body>
-</html>
+{% extends 'sugerencia.html'%}
+{% block content %}
+    <h1>Usted no tiene acceso</h1>
+    {{ request.method }}<br>
+    {{ request.headers.user_agent }}<br>
+    {{ request.get_full_path }}<br>
+{% endblock %}
