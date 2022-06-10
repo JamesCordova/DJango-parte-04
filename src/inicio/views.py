@@ -19,4 +19,9 @@ def pagina404(request, *args, **kwargs):
     return render(request,'404.html',{})
 
 def paginaNoAccess(request, *args, **kwargs):
-    return render(request,'noAccess.html',{})
+    myContext = {
+        'text': 'Un ejemplo de texto',
+        'number': 44.3,
+        'list': [2,3,5,7,11,13,17,19,23,29,31]
+    }
+    return render(request,'noAccess.html', myContext)
