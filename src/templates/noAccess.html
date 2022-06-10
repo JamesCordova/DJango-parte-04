@@ -1,0 +1,22 @@
+{% extends 'sugerencia.html'%}
+{% block content %}
+    <h1>Usted no tiene acceso</h1>
+    {{ request.method }}<br>
+    {{ request.headers.user_agent }}<br>
+    {{ request.get_full_path }}<br>
+    <ul>
+        {% for item in list %}
+            <li>({{ forloop.counter0 }}, <!--cuenta desde el 0-->
+                 {{ forloop.revcounter0 }}, <!--se cuenta desde el final hasta 0 en este caso-->
+                 {{ forloop.first }}, <!-- true si es el primero-->
+                 {{ forloop.last }}) <!-- true si es el ultimo -->
+                  - {{ item }} 
+            {% if item < 9 %}
+                - Este numero tiene un digito
+            {% elif item > 10 %}
+                - Este numero tiene dos digitos
+            {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

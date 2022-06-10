@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Hola mundo desde Django</h1>
+<h2>Con Templates</h2>
+<p>
+    {{myText}}
+    {{myNumber}}
+</p>
+<ul>
+    {% for myItem in myList %}
+        <li>{{ forloop.counter }} - {{ myItem }}
+        {% if myItem == 33 %}
+            - Este numero es magico
+        {% elif myItem > 40 %}
+            - Este numero es mayor a 40
+        {% endif %}
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
