@@ -19,4 +19,4 @@ def pagina404(request, *args, **kwargs):
     return render(request,'404.html',{})
 
 def paginaNoAccess(requets, *args, **kwargs):
-    return HttpResponse('<h1>Usted no tiene acceso a esta pagina</h1>')
+    return render(request,'noAccess.html',{})
