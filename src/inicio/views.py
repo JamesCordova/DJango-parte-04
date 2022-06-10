@@ -18,5 +18,5 @@ def myOtraVista(request, *args, **kwargs):
 def pagina404(request, *args, **kwargs):
     return render(request,'404.html',{})
 
-def paginaNoAccess(requets, *args, **kwargs):
+def paginaNoAccess(request, *args, **kwargs):
     return render(request,'noAccess.html',{})

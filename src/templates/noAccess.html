@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Codigo base para estudiantes desde Django</title>
+        <title>Template nuevo para no access</title>
     </head>
     <body>
         {% include 'nav.html' %}
         <h1>Usted no tiene acceso</h1>
+        {{ request.method }}
+        {{ request.headers.user_agent }}<br>
+        {{ request.get_full_path }}
     </body>
 </html>
