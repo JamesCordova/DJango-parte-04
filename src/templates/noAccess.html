@@ -18,5 +18,20 @@
             {% endif %}
             </li>
         {% endfor %}
+        <h3>Variables en el tag if</h3>
+        <p>
+            1. Lista "listFilled"
+            {% if listFilled %}
+                - La lista esta llena
+            {% else %}
+                - No hay elementos en la lista
+            {% endif %}<br>
+            2. Lista "listVoid"
+            {% if listVoid %}
+                - La lista esta llena
+            {% else %}
+                - No hay elementos en la lista
+            {% endif %}<br>
+        </p>
     </ul>
 {% endblock %}

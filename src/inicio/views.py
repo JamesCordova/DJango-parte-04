@@ -22,6 +22,8 @@ def paginaNoAccess(request, *args, **kwargs):
     myContext = {
         'text': 'Un ejemplo de texto',
         'number': 44.3,
-        'list': [2,3,5,7,11,13,17,19,23,29,31]
+        'list': [2,3,5,7,11,13,17,19,23,29,31],
+        'listVoid': [],
+        'listFilled': ['natación', 'futbol', 'voley', 'basquet'] # deportes que me agradan
     }
     return render(request,'noAccess.html', myContext)
