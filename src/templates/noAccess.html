@@ -33,5 +33,21 @@
                 - No hay elementos en la lista
             {% endif %}<br>
         </p>
+        <h3>Operadores en el tag if</h3>
+        <p>
+            LISTAS: {{ listFilled }} - {{ listVoid }}<br>
+            {% if listFilled and  not listVoid %}
+                - listFilled tiene elementos y listVoid no los tiene
+            {% else %}
+                - Ambas listas tienen elementos o el primero no los tiene 
+            {% endif %}<br>
+            LISTAS: {{ listFilled }} - {{ listVoid }}
+            <br>
+            {% if listFilled or listVoid %}
+                - Uno de las listas, listFilled, listVoid o ambos tienen elementos
+            {% else %}
+                - En definitiva ninguno tiene elemetos
+            {% endif %}<br>
+        </p>
     </ul>
 {% endblock %}
