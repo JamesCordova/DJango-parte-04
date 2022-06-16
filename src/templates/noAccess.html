@@ -67,5 +67,24 @@
             </li>
         {% endfor %}
     </ul>
+    <h3>Operadores IN, NOT IN, IS e IS NOT en el tag if</h3>
+    <p>
+        IN, NOT IN en strings: <br>
+        {% if "gmail" not in "correo@unsa.edu.pe" %}
+            El string "correo@unsa.edu.pe" NO contiene "gmail"
+        {% endif %}<br>
+        LISTA: {{ listFilled }} <br>
+        {% if "futbol" in listFilled %}
+            La lista listFilled contiene el string "futbol"
+        {% endif %}
+        <br>
+        IS, IS NOT en valores: <br>
+        {% if  valorCualquiera is None %}
+            - Si el valor no esta en el contexto
+        {% endif %}<br>
+        {% if  listVoid is not True %}
+            - Independiente de la declaracion es verdadera
+        {% endif %}<br>
+    </p>
 
 {% endblock %}
