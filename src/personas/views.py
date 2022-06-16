@@ -5,8 +5,11 @@ from .models import Persona
 # Create your views here.
 def personaTestView(request):
     obj = Persona.objects.get(id = 2)
-    context = {
+    oldContext = {
         'nombre': obj.nombres,
         'edad': obj.edad,
+    }
+    context = {
+        'objeto': obj,
     }
     return render(request, 'personas/test.html', context)
