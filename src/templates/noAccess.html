@@ -18,36 +18,54 @@
             {% endif %}
             </li>
         {% endfor %}
-        <h3>Variables en el tag if</h3>
-        <p>
-            1. Lista "listFilled"
-            {% if listFilled %}
-                - La lista esta llena
-            {% else %}
-                - No hay elementos en la lista
-            {% endif %}<br>
-            2. Lista "listVoid"
-            {% if listVoid %}
-                - La lista esta llena
-            {% else %}
-                - No hay elementos en la lista
-            {% endif %}<br>
-        </p>
-        <h3>Operadores en el tag if</h3>
-        <p>
-            LISTAS: {{ listFilled }} - {{ listVoid }}<br>
-            {% if listFilled and  not listVoid %}
-                - listFilled tiene elementos y listVoid no los tiene
-            {% else %}
-                - Ambas listas tienen elementos o el primero no los tiene 
-            {% endif %}<br>
-            LISTAS: {{ listFilled }} - {{ listVoid }}
-            <br>
-            {% if listFilled or listVoid %}
-                - Uno de las listas, listFilled, listVoid o ambos tienen elementos
-            {% else %}
-                - En definitiva ninguno tiene elemetos
-            {% endif %}<br>
-        </p>
     </ul>
+    <h3>Variables en el tag if</h3>
+    <p>
+        1. Lista "listFilled"
+        {% if listFilled %}
+            - La lista esta llena
+        {% else %}
+            - No hay elementos en la lista
+        {% endif %}<br>
+        2. Lista "listVoid"
+        {% if listVoid %}
+            - La lista esta llena
+        {% else %}
+            - No hay elementos en la lista
+        {% endif %}<br>
+    </p>
+    <h3>Operadores en el tag if</h3>
+    <p>
+        LISTAS: {{ listFilled }} - {{ listVoid }}<br>
+        {% if listFilled and  not listVoid %}
+            - listFilled tiene elementos y listVoid no los tiene
+        {% else %}
+            - Ambas listas tienen elementos o el primero no los tiene 
+        {% endif %}<br>
+        LISTAS: {{ listFilled }} - {{ listVoid }}
+        <br>
+        {% if listFilled or listVoid %}
+            - Uno de las listas, listFilled, listVoid o ambos tienen elementos
+        {% else %}
+            - En definitiva ninguno tiene elemetos
+        {% endif %}<br>
+    </p>
+    <h3>Operadores de comparacion en el tag if</h3>
+    <ul>
+        En la lista list de numeros
+        {% for item in list %}
+            <li>{{ item }} -
+            {% if item == 13 %}
+                - Este numero tiene muy mala fama
+            {% elif item != 2 and item <= 9  %}
+                - No eres un 2 y tampoco tienes dos cifras
+            {% elif item > 50 %}
+                - Felicidades entre el 1 al 100 eres de los primos mayores a 50
+            {% else %}
+                - No tienes algo especial o sí
+            {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+
 {% endblock %}
