@@ -31,8 +31,15 @@
         {{ fecha|date:'SHORT_DATE_FORMAT' }} o {{ fecha|date }}<br>
         <h4>Respecto a otros</h4>
         Variable "valor": 
-        {{ valor|default:"nothing" }}<!--Si la variable es una cadena vacia, este filter le dara el predeterminado, en este caso 'nothing'--><br>
+        {{ valor|default:"nothing" }}
+        <!--Si la variable es una cadena vacia, este filter le dara el predeterminado, en este caso 'nothing'--><br>
         Variable "otroValor": 
-        {{ otroValor|default_if_none:"none"}}<!--Si el valor es ninguno(None) pues el default mostrado en pantalla es none en este caso--><br>
+        {{ otroValor|default_if_none:"none"}}
+        <!--Si el valor es ninguno(None) pues el default mostrado en pantalla es none en este caso--><br>
+        {{ dict|dictsort:"nombre"}}
+        <!--nombres respecto al abecedario aparentemente, tambien podria ser numericamente
+        en este caso seria de forma ascendente y si tiene listas seran de acuerdo al indice--><br>
+        {{ presentacion|filesizeformat }}<br>
+        {{ list1|first }}<!--el primer valor de la lista-->
     </body>
 </html>

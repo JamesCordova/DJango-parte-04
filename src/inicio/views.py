@@ -25,6 +25,7 @@ def pagina404(request, *args, **kwargs):
         'fecha': datetime.now(),
         'valor': '',
         'otroValor': None,
+        'dict':[{'nombre': 'Luis','edad':32}, {'nombre': 'Jhon','edad':53}],
     }
     return render(request,'404.html', context)
 
