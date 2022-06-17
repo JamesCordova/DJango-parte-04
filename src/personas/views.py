@@ -33,3 +33,14 @@ def personaCreateView(request):
 
 def searchForHelp(request):
     return render(request, 'personas/search.html', {})
+
+def personaCreateViewOld(request):
+    form = PersonaForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        form = PersonaForm()
+
+    context = {
+        'form': form
+    }
+    return render(request, 'personas/personasCreate old.html', context)
