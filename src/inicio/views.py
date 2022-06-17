@@ -23,6 +23,8 @@ def pagina404(request, *args, **kwargs):
         'list2': ['o', 'u'],
         'curso': 'programacion',
         'fecha': datetime.now(),
+        'valor': '',
+        'otroValor': None,
     }
     return render(request,'404.html', context)
 

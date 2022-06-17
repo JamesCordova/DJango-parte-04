@@ -27,5 +27,12 @@
         Greenwich es {{ fecha|date:'T'}}, el signo y los digitos expresan las horas, en 
         segundos serian {{ fecha|date:"Z" }} (timezone)<br>
         Podemos representarlo de algunas maneras como estas: {{ fecha|date:"c r"}} (date/time)
+        <h3>Podemos encontrar particularidades como...</h3>
+        {{ fecha|date:'SHORT_DATE_FORMAT' }} o {{ fecha|date }}<br>
+        <h4>Respecto a otros</h4>
+        Variable "valor": 
+        {{ valor|default:"nothing" }}<!--Si la variable es una cadena vacia, este filter le dara el predeterminado, en este caso 'nothing'--><br>
+        Variable "otroValor": 
+        {{ otroValor|default_if_none:"none"}}<!--Si el valor es ninguno(None) pues el default mostrado en pantalla es none en este caso--><br>
     </body>
 </html>
