@@ -40,6 +40,11 @@
         <!--nombres respecto al abecedario aparentemente, tambien podria ser numericamente
         en este caso seria de forma ascendente y si tiene listas seran de acuerdo al indice--><br>
         {{ presentacion|filesizeformat }}<br>
-        {{ list1|first }}<!--el primer valor de la lista-->
+        {{ list1|first }}<!--el primer valor de la lista--><br>
+        {{ list1|last }}<!--el ultimo valor de la lista--><br>
+        {{ list1|length }}<!--cantidad de valores en la lista--><br>
+        {{ list1|length_is:'1' }}<!--booleano si la longitud es el argumento--><br>
+        {{ descripcion|linebreaks }}<!--reemplaza \n por <br>--><br>
+        {{ descripcion|linebreaksbr }}<!--reemplaza <br> por \n--><br>
     </body>
 </html>

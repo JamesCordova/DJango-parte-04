@@ -19,6 +19,7 @@ def myOtraVista(request, *args, **kwargs):
 def pagina404(request, *args, **kwargs):
     context = {
         'presentacion': "I'm a student and I choose 'everything'",
+        'descripcion': 'Hay demasiadas cosas por demostrar\ncomo varios textos de planos a Html\nasi como agregar mas contenido',
         'list1': ['a', 'e', 'i'],
         'list2': ['o', 'u'],
         'curso': 'programacion',
