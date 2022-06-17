@@ -14,5 +14,11 @@
         {{ fecha|date:"l j" }} es el dia {{ fecha|date:'z' }} del año<br>
         {{ fecha|date:"W S" }} semana, en el mes {{ fecha|date:'F' }} 
         de forma abreviada {{ fecha|date:'M'}} es el mes numero {{ fecha|date:'n'}}<br>
+        Este año {{ fecha|date:"Y" }}
+        {% if fecha|date:'L' %}
+        NO
+        {% endif %}
+         es bisiesto <br>
+        
     </body>
 </html>
