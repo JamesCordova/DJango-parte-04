@@ -5,5 +5,55 @@
     </head>
     <body>
         <h1>template de 404</h1>
+        <h3> Pruebas Filter </h3>
+        {{ list1|add:list2 }} <br>
+        <h2>{{ presentacion|addslashes }}</h2>
+        <h2>{{ curso|capfirst }}</h2>
+        <pre>{{ curso|center:"30" }}</pre> <!--Como los espacios repetidos no son reconocidos en varios tags utilizaremos 'pre'-->
+        <h2>{{ curso|cut:"gra" }}</h2>
+        {{ fecha|date:"l j" }} es el dia {{ fecha|date:'z' }} del año<br>
+        {{ fecha|date:"W S" }} semana, en el mes {{ fecha|date:'F' }} 
+        de forma abreviada {{ fecha|date:'M'}} es el mes numero {{ fecha|date:'n'}}<br>
+        Este año {{ fecha|date:"Y" }}
+        {% if fecha|date:'L' %}
+        NO
+        {% endif %}
+         es bisiesto <br>
+        Al momento de cargar esta pagina eran las {{ fecha|date:"f "}}, si preguntas por 'AM' o 'PM',
+        pues es {{ fecha|date:'A'}}, aunque podriamos ponerlos juntos así: {{ fecha|date:'P'}}, incluso
+        los segundos {{ fecha|date:'s'}} y sin ser una molestia los microsegundos {{ fecha|date:"u"}}
+        (time)<br>
+        Se cambio la zona horaria al servidor, ahora la diferencia horaria respecto al meridiano de 
+        Greenwich es {{ fecha|date:'T'}}, el signo y los digitos expresan las horas, en 
+        segundos serian {{ fecha|date:"Z" }} (timezone)<br>
+        Podemos representarlo de algunas maneras como estas: {{ fecha|date:"c r"}} (date/time)
+        <h3>Podemos encontrar particularidades como...</h3>
+        {{ fecha|date:'SHORT_DATE_FORMAT' }} o {{ fecha|date }}<br>
+        <h4>Respecto a otros</h4>
+        Variable "valor": 
+        {{ valor|default:"nothing" }}
+        <!--Si la variable es una cadena vacia, este filter le dara el predeterminado, en este caso 'nothing'--><br>
+        Variable "otroValor": 
+        {{ otroValor|default_if_none:"none"}}
+        <!--Si el valor es ninguno(None) pues el default mostrado en pantalla es none en este caso--><br>
+        {{ dict|dictsort:"nombre"}}
+        <!--nombres respecto al abecedario aparentemente, tambien podria ser numericamente
+        en este caso seria de forma ascendente y si tiene listas seran de acuerdo al indice--><br>
+        {{ presentacion|filesizeformat }}<br>
+        {{ list1|first }}<!--el primer valor de la lista--><br>
+        {{ list1|last }}<!--el ultimo valor de la lista--><br>
+        {{ list1|length }}<!--cantidad de valores en la lista--><br>
+        {{ list1|length_is:'1' }}<!--booleano si la longitud es el argumento--><br>
+        {{ descripcion|linebreaks }}<!--reemplaza \n por <br>--><br>
+        {{ descripcion|linebreaksbr }}<!--reemplaza <br> por \n--><br>
+        {{ presentacion|make_list}}<br>
+        En la lista {{ list1 }} tiene{{ list1|pluralize }} valor{{ list1|pluralize:'es' }}
+        <!--en ves de un if podria utilizar esto--><br>
+        Un item al al azar de {{ list1 }} es: {{ list1|random }}<br>
+        Un trozo de {{ list1 }} es {{ list1|slice:":2"}}
+        Nro de palabras en {{ presentacion }} es {{ presentacion|wordcount }}<br>
+        Si el valor es {{ boolean1 }} pues su interpretacion es {{ boolean1|yesno:"Sip, Noooo"}}<br>
+        Si el valor es {{ boolean2 }} pues su interpretacion es {{ boolean2|yesno:"Sip, Noooo"}}<br>
+        No es necesario pero si es {{ otroValor }} pues es {{ otroValor|yesno:"Sip, Noooo, Ni idea"}}<br>
     </body>
 </html>
