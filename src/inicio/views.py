@@ -1,3 +1,4 @@
+from datetime import datetime
 from http.client import HTTPResponse
 from urllib import request
 from django.shortcuts import render
@@ -21,6 +22,7 @@ def pagina404(request, *args, **kwargs):
         'list1': ['a', 'e', 'i'],
         'list2': ['o', 'u'],
         'curso': 'programacion',
+        'fecha': datetime.now(),
     }
     return render(request,'404.html', context)
 

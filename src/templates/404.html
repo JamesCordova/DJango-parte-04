@@ -11,5 +11,6 @@
         <h2>{{ curso|capfirst }}</h2>
         <pre>{{ curso|center:"30" }}</pre> <!--Como los espacios repetidos no son reconocidos en varios tags utilizaremos 'pre'-->
         <h2>{{ curso|cut:"gra" }}</h2>
+        {{ fecha|date:"l j" }} es el dia {{ fecha|date:'z' }} del año<br>
     </body>
 </html>
