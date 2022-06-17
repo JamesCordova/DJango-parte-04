@@ -16,7 +16,12 @@ def myOtraVista(request, *args, **kwargs):
     return HttpResponse('<h1>Solo otra pagina</h1>')
 
 def pagina404(request, *args, **kwargs):
-    return render(request,'404.html',{})
+    context = {
+        'presentacion': "I'm a student and I choose 'everything'",
+        'list1': ['a', 'e', 'i'],
+        'list2': ['o', 'u'],
+    }
+    return render(request,'404.html', context)
 
 def paginaNoAccess(request, *args, **kwargs):
     myContext = {
@@ -24,6 +29,6 @@ def paginaNoAccess(request, *args, **kwargs):
         'number': 44.3,
         'list': [2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97],
         'listVoid': [],
-        'listFilled': ['natación', 'futbol', 'voley', 'basquet'] # deportes que me agradan
+        'listFilled': ['natación', 'futbol', 'voley', 'basquet'], # deportes que me agradan
     }
     return render(request,'noAccess.html', myContext)
