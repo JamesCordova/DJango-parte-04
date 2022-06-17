@@ -20,6 +20,7 @@ def pagina404(request, *args, **kwargs):
         'presentacion': "I'm a student and I choose 'everything'",
         'list1': ['a', 'e', 'i'],
         'list2': ['o', 'u'],
+        'curso': 'programacion',
     }
     return render(request,'404.html', context)
 

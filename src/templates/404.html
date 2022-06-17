@@ -8,5 +8,8 @@
         <h3> Pruebas Filter </h3>
         {{ list1|add:list2 }} <br>
         <h2>{{ presentacion|addslashes }}</h2>
+        <h2>{{ curso|capfirst }}</h2>
+        <pre>{{ curso|center:"30" }}</pre> <!--Como los espacios repetidos no son reconocidos en varios tags utilizaremos 'pre'-->
+        <h2>{{ curso|cut:"gra" }}</h2>
     </body>
 </html>
