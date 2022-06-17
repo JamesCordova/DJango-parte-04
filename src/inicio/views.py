@@ -25,6 +25,8 @@ def pagina404(request, *args, **kwargs):
         'curso': 'programacion',
         'fecha': datetime.now(),
         'valor': '',
+        'boolean1': True,
+        'boolean2': False,
         'otroValor': None,
         'dict':[{'nombre': 'Luis','edad':32}, {'nombre': 'Jhon','edad':53}],
     }

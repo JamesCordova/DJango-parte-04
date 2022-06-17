@@ -46,5 +46,14 @@
         {{ list1|length_is:'1' }}<!--booleano si la longitud es el argumento--><br>
         {{ descripcion|linebreaks }}<!--reemplaza \n por <br>--><br>
         {{ descripcion|linebreaksbr }}<!--reemplaza <br> por \n--><br>
+        {{ presentacion|make_list}}<br>
+        En la lista {{ list1 }} tiene{{ list1|pluralize }} valor{{ list1|pluralize:'es' }}
+        <!--en ves de un if podria utilizar esto--><br>
+        Un item al al azar de {{ list1 }} es: {{ list1|random }}<br>
+        Un trozo de {{ list1 }} es {{ list1|slice:":2"}}
+        Nro de palabras en {{ presentacion }} es {{ presentacion|wordcount }}<br>
+        Si el valor es {{ boolean1 }} pues su interpretacion es {{ boolean1|yesno:"Sip, Noooo"}}<br>
+        Si el valor es {{ boolean2 }} pues su interpretacion es {{ boolean2|yesno:"Sip, Noooo"}}<br>
+        No es necesario pero si es {{ otroValor }} pues es {{ otroValor|yesno:"Sip, Noooo, Ni idea"}}<br>
     </body>
 </html>
