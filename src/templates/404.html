@@ -19,6 +19,8 @@
         NO
         {% endif %}
          es bisiesto <br>
-        
+        Al momento de cargar esta pagina eran las {{ fecha|date:"f "}}, si preguntas por 'AM' o 'PM',
+        pues es {{ fecha|date:'A'}}, aunque podriamos ponerlos juntos así: {{ fecha|date:'P'}}, incluso
+        los segundos {{ fecha|date:'s'}} y sin ser una molestia los microsegundos {{ fecha|date:"u"}}<br>
     </body>
 </html>
