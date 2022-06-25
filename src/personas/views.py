@@ -46,7 +46,14 @@ def personaCreateViewOld(request):
     return render(request, 'personas/personasCreate old.html', context)
 
 def personaAnotherCreateView(request):
-    form = RawPersonaForm(request.POST)
+    #form = RawPersonaForm(request.POST) # dejando esto a un lado
+    form = RawPersonaForm() # request.get si lo fuera tendriamos problemas con el comentario anterior como linea de codigo
+    if request.method =='POST':
+        form = RawPersonaForm(request.POST) # ahora comprobamos si es POST para luego recien enviar los datos en POST al form
+        if form.is_valid():
+            print(form.cleaned_data)
+        else:
+            print(form.errors)
     context = {
         'form': form,
     }
