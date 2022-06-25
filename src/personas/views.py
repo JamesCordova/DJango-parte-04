@@ -46,7 +46,7 @@ def personaCreateViewOld(request):
     return render(request, 'personas/personasCreate old.html', context)
 
 def personaAnotherCreateView(request):
-    form = RawPersonaForm()
+    form = RawPersonaForm(request.POST)
     context = {
         'form': form,
     }
