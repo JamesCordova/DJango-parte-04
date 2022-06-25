@@ -35,8 +35,12 @@ def searchForHelp(request):
     return render(request, 'personas/search.html', {})
 
 def personaCreateViewOld(request):
-    obj = Persona.objects.get(id = 11)
-    form = PersonaForm(request.POST or None, instance = obj)
+    #obj = Persona.objects.get(id = 11)
+    initialValues = {
+        'nombres': 'Sin nombre',
+    }
+    #form = PersonaForm(request.POST or None, instance = obj)
+    form = PersonaForm(request.POST or None, initial = initialValues)
     if form.is_valid():
         form.save()
         form = PersonaForm()
