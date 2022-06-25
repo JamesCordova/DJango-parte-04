@@ -13,7 +13,7 @@ class PersonaForm(forms.ModelForm):
         }
 
 class RawPersonaForm(forms.Form):
-    nombres = forms.CharField()
+    nombres = forms.CharField(label = 'Tu nombre')
     apellidos = forms.CharField()
-    edad = forms.IntegerField()
+    edad = forms.IntegerField(initial = 18)
     donador = forms.BooleanField()

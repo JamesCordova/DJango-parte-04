@@ -52,6 +52,8 @@ def personaAnotherCreateView(request):
         form = RawPersonaForm(request.POST) # ahora comprobamos si es POST para luego recien enviar los datos en POST al form
         if form.is_valid():
             print(form.cleaned_data)
+            # ahora grabamos los datos
+            Persona.objects.create(**form.cleaned_data)
         else:
             print(form.errors)
     context = {
