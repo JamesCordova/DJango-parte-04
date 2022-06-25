@@ -1,4 +1,4 @@
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, redirect
 from .models import Persona
 from .forms import PersonaForm, RawPersonaForm
 
@@ -78,6 +78,7 @@ def personasDeleteView(request, myID):
     if request.method == 'POST':
         print('borrando objeto')
         obj.delete()
+        return redirect('../')
     context = {
         'objeto': obj,
     }
