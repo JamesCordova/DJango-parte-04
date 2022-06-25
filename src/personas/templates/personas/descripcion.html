@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1> {{ objeto.nombres }} </h1>
-<h2>
-    Cuando se le pregunto el apellido lo deletreo asi: {{objeto.apellidos|make_list}}<br>
+<h1> {{ objeto.nombres }} {{ objeto.apellidos }} </h1>
+<h3>
+    {{ objeto.edad }} años <br>
     {% if objeto.edad > 40 %}
     debe cuidarse del colesterol
     {% else %}
@@ -10,5 +10,5 @@
     {% endif %}<br>
     En el momento de la pregunta si era donador dijo: 
     {{objeto.donador|yesno:"Claro que dono me parece lo mas adecuado, No considero que sea necesario"}}<br>
-</h2>
+</h3>
 {% endblock %}

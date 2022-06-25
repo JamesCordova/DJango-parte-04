@@ -20,7 +20,14 @@ from inicio.views import myHomeView
 from inicio.views import pagina404
 from inicio.views import paginaNoAccess
 # Persona
-from personas.views import personaTestView, personaCreateView, searchForHelp, personaCreateViewOld, personaAnotherCreateView
+from personas.views import (
+    personaTestView, 
+    personaCreateView, 
+    searchForHelp, 
+    personaCreateViewOld, 
+    personaAnotherCreateView,
+    personaShowObject,
+)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -33,4 +40,5 @@ urlpatterns = [
     path('search', searchForHelp, name='buscar'),
     path('addPersona', personaCreateViewOld, name='Crear una persona más'),
     path('anotherAdd/', personaAnotherCreateView, name='Otro agregar persona'),
+    path('personas/<int:myID>/', personaShowObject, name='browsing'),
 ]
