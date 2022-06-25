@@ -25,5 +25,6 @@ class RawPersonaForm(forms.Form):
         )
     )
     apellidos = forms.CharField()
-    edad = forms.IntegerField(initial = 18)
-    donador = forms.BooleanField()
+    edad = forms.IntegerField(initial = 18) # frente a problemas con algunos tags que no soporten el tipo de campo
+    donador = forms.BooleanField() # al parecer no arruinan nada, ya que se hace la misma validacion,
+    #si se necesita de un numero, pediran un numero, si es boolean, un string con caracteres sera True
