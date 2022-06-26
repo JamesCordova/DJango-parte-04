@@ -27,6 +27,13 @@ class PersonaForm(forms.ModelForm):
         else:
             raise forms.ValidationError('Debe ser mayor de 21 años')
     
+    def clean_apellidos(self):
+        apellidos = self.cleaned_data.get("apellidos")
+        if len(apellidos) < 4:
+            raise forms.ValidationError('Su apellido es muy corto')
+        return apellidos
+    
+    
 
 class RawPersonaForm(forms.Form):
     #nombres = forms.CharField(label = 'Tu nombre')
