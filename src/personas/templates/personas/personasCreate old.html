@@ -1,7 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
 <form method='POST'>{% csrf_token %}
+    <h3>Parrafo:</h3>
     {{ form.as_p }}
+    <h3>Lista:</h3>
+    {{ form.as_ul }}
+    <h3>Tabla:</h3>
+    {{ form.as_table }}
     <input type="submit" value="Grabar"/>
 </form>
 {% endblock %}

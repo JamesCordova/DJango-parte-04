@@ -36,7 +36,5 @@ class RawPersonaForm(forms.Form):
     edad = forms.IntegerField(initial = 18) # frente a problemas con algunos tags que no soporten el tipo de campo
     donador = forms.BooleanField() # al parecer no arruinan nada, ya que se hace la misma validacion,
     #si se necesita de un numero, pediran un numero, si es boolean, un string con caracteres sera True
-    campo1 = forms.ImageField()
-    campo2 = forms.FileField()
-    campo3 = forms.TimeField()
-    campo4 = forms.AutoField() # no permitido
+    
+    #campo4 = forms.AutoField() # no permitido
