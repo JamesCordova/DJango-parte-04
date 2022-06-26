@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from multiprocessing import context
+from django.shortcuts import get_object_or_404, render, redirect
 from .models import Persona
-from .forms import PersonaForm
+from .forms import PersonaForm, RawPersonaForm
 
 # Create your views here.
 def personaTestView(request):
@@ -35,7 +36,12 @@ def searchForHelp(request):
     return render(request, 'personas/search.html', {})
 
 def personaCreateViewOld(request):
-    form = PersonaForm(request.POST or None)
+    #obj = Persona.objects.get(id = 11)
+    initialValues = {
+        'nombres': 'Sin nombre',
+    }
+    #form = PersonaForm(request.POST or None, instance = obj)
+    form = PersonaForm(request.POST or None, initial = initialValues)
     if form.is_valid():
         form.save()
         form = PersonaForm()
@@ -44,3 +50,44 @@ def personaCreateViewOld(request):
         'form': form
     }
     return render(request, 'personas/personasCreate old.html', context)
+
+def personaAnotherCreateView(request):
+    #form = RawPersonaForm(request.POST) # dejando esto a un lado
+    form = RawPersonaForm() # request.get si lo fuera tendriamos problemas con el comentario anterior como linea de codigo
+    if request.method =='POST':
+        form = RawPersonaForm(request.POST) # ahora comprobamos si es POST para luego recien enviar los datos en POST al form
+        if form.is_valid():
+            print(form.cleaned_data)
+            # ahora grabamos los datos
+            Persona.objects.create(**form.cleaned_data)
+        else:
+            print(form.errors)
+    context = {
+        'form': form,
+    }
+    return render(request, 'personas/personasCreate old.html', context)
+
+def personaShowObject(request, myID):
+    obj = get_object_or_404(Persona, id = myID)
+    context = {
+        'objeto': obj,
+    }
+    return render(request, 'personas/descripcion.html', context)
+
+def personasDeleteView(request, myID):
+    obj = get_object_or_404(Persona, id = myID)
+    if request.method == 'POST':
+        print('borrando objeto')
+        obj.delete()
+        return redirect('../')
+    context = {
+        'objeto': obj,
+    }
+    return render(request, 'personas/personasBorrar.html', context)
+
+def personasListView(request):
+    queryset = Persona.objects.all()
+    context = {
+        'objectList': queryset,
+    }
+    return render(request, 'personas/personasLista.html', context)
