@@ -10,5 +10,6 @@ class Persona(models.Model):
 
     def get_absolute_url(self):
         #return '/personas/' + str(self.id) + '/' # no es dinamico asi que para hacerlo de esa manera usaremos reverse
-        return reverse('browsing', kwargs = {'myID': self.id})
+        #return reverse('browsing', kwargs = {'myID': self.id})
+        return reverse('personas:browsing', kwargs = {'myID': self.id}) #ahora buscara el browsing en personas y no en el proyecto
     
