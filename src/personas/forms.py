@@ -19,6 +19,14 @@ class PersonaForm(forms.ModelForm):
             return name
         else:
             raise forms.ValidationError('La primera letra debe ser mayúscula')
+    
+    def clean_edad(self):
+        edad = self.cleaned_data.get("edad")
+        if edad > 21:
+            return edad
+        else:
+            raise forms.ValidationError('Debe ser mayor de 21 años')
+    
 
 class RawPersonaForm(forms.Form):
     #nombres = forms.CharField(label = 'Tu nombre')
