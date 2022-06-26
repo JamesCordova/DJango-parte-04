@@ -38,3 +38,5 @@ class RawPersonaForm(forms.Form):
     #si se necesita de un numero, pediran un numero, si es boolean, un string con caracteres sera True
     
     #campo4 = forms.AutoField() # no permitido
+    # las opciones core by default en los campos son varios, por ejemplo
+    # required = True y  label = < el nombre del campo >
