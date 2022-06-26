@@ -2,7 +2,8 @@
 {% block content %}
 <form method='POST'>{% csrf_token %}
     <h3>Parrafo:</h3>
-    {{ form.as_p }}
+    {{ form.as_p }}<!-- al editar los atributos para que no tenga el required,
+         el servidor envia una lista de error, demostrando la seguridad de Django -->
     <!--<h3>Lista:</h3>
     {{ form.as_ul }}
     <h3>Tabla:</h3>
